@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
     <title>Employee List</title>
@@ -7,19 +7,21 @@
 <body>
 <h3>All Employee Details</h3>
 
-<table border="1px" style="background-color: lavenderblush">
-    <tr class="row">
-        <td>Sl. No</td>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Designation</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>007</td>
-        <td>James Bond</td>
-        <td>Lead</td>
-    </tr>
-</table>
+<div class="row">
+    <table border="1px" style="background-color: lavenderblush">
+        <tr class="row">
+            <td>Sl. No</td>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Designation</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>007</td>
+            <td th:value="${name}"></td>
+            <td>Lead</td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
