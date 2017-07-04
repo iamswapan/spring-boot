@@ -1,26 +1,35 @@
 package com.app.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by swapan on 21/6/17.
  */
 
 @Entity
-public class Employee {
+@Table(name = "employee")
+public class Employee implements Serializable {
+
+
+    private static final long serialVersionUID = 208L;
 
 //    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private int id;
-    private String name;
-    private String designation;
+    public Long empId;
+    public String name;
+    public String designation;
 
-    public Integer getId() {
-        return id;
+
+    public Employee() {
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    /*public Long getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(Long empId) {
+        this.empId = empId;
     }
 
     public String getName() {
@@ -37,5 +46,14 @@ public class Employee {
 
     public void setDesignation(String designation) {
         this.designation = designation;
+    }*/
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", name='" + name + '\'' +
+                ", designation='" + designation + '\'' +
+                '}';
     }
 }

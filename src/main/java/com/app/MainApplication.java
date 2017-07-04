@@ -21,7 +21,7 @@ public class MainApplication {
         Session session=sessionFactory.openSession();
         session.beginTransaction();
         Employee emp=new Employee();
-        //emp.setId(5);
+        //emp.setEmpId(5);
         emp.setName("Mark");
         emp.setDesignation("CEO");
         session.save(emp);
