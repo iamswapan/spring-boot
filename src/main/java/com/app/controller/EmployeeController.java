@@ -36,13 +36,20 @@ public class EmployeeController {
 
         SessionFactory sessionFactory= new Configuration().configure().buildSessionFactory();
         Session session=sessionFactory.openSession();
-        session.beginTransaction();
-        System.out.println(emp);
-        System.out.println(session);
-        session.save(emp.getClass().toString(), emp);
-        System.out.println("session=========" + session);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.beginTransaction();
+            System.out.println(emp);
+            System.out.println(session);
+            session.save(emp.getClass().toString(), emp);
+            System.out.println("session=========" + session);
+            session.getTransaction().commit();
+            session.close();
+        }catch (RuntimeException ex){
+            System.out.println("Exception============");
+        }finally {
+            session.close();
+            sessionFactory.close();
+        }
         model.addAttribute("name", "Tom");
         return "employee/employeeList";
     }

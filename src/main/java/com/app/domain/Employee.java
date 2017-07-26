@@ -24,7 +24,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    /*public Long getEmpId() {
+    public Long getEmpId() {
         return empId;
     }
 
@@ -46,7 +46,7 @@ public class Employee implements Serializable {
 
     public void setDesignation(String designation) {
         this.designation = designation;
-    }*/
+    }
 
     @Override
     public String toString() {
