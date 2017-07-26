@@ -17,15 +17,5 @@ public class MainApplication {
         System.out.println("**************My Spring Boot Application is up and running*************");
         SpringApplication.run(MainApplication.class, args);
         System.out.println("**************My Spring Boot Application is finished sucessfully*************");
-        /*SessionFactory sessionFactory= new Configuration().configure().buildSessionFactory();
-        Session session=sessionFactory.openSession();
-        session.beginTransaction();
-        Employee emp=new Employee();
-        //emp.setEmpId(5);
-        emp.setName("Mark");
-        emp.setDesignation("CEO");
-        session.save(emp);
-        session.getTransaction().commit();
-        session.close();*/
     }
 }
