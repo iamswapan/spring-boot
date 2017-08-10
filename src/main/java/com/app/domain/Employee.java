@@ -14,7 +14,7 @@ public class Employee implements Serializable {
 
     private static final long serialVersionUID = 208L;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     public Long empId;
     public String name;

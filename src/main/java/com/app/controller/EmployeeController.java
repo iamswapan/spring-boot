@@ -23,21 +23,19 @@ public class EmployeeController {
     public String getEmployeeList(Model model) {
         Session session = HibernateConfig.getSession();
         try {
-            session.beginTransaction();
-
             Employee emp = new Employee();
-            emp.setEmpId(5l);
-            emp.setName("Mark");
-            emp.setDesignation("CEO");
+            emp.setEmpId(1l);
+            emp.setName("Satya");
+            emp.setDesignation("MD");
             session.beginTransaction();
             System.out.println(emp);
             System.out.println(session);
             session.save(emp.getClass().toString(), emp);
             System.out.println("session=========" + session);
             session.getTransaction().commit();
-            session.close();
         } catch (RuntimeException ex) {
             System.out.println("Exception Occurred :: "+ex.getMessage());
+            ex.printStackTrace();
         } finally {
             session.close();
         }
