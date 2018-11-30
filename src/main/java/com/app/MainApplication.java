@@ -17,5 +17,6 @@ public class MainApplication {
         System.out.println("**************My Spring Boot Application is up and running*************");
         SpringApplication.run(MainApplication.class, args);
         System.out.println("**************My Spring Boot Application is finished sucessfully*************");
+
     }
 }
